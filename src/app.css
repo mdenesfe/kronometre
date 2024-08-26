@@ -1,0 +1,102 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+    :root {
+        --color-primary: #facc15;
+        --color-secondary: #fbbf24;
+        --color-pink-primary: #fbcfe8;
+        --color-pink-secondary: #f9a8d4; 
+        --color-gray-primary: #d1d5db; 
+        --color-gray-secondary: #a1a1a6;
+        --color-blue-primary: #b4c6fc;
+        --color-blue-secondary: #a5b4fc;
+
+        --color-dark-background: #333437;
+        --color-text: #333437;
+        --color-dark-text: #f3f4f6;
+        --color-dark-primary: #2563eb;
+        --color-dark-secondary: #3b82f6;
+        --color-dark-gray-primary: #374151;
+        --color-dark-gray-secondary: #4b5563;
+    }
+
+    body {
+        @apply bg-gray-100 text-gray-900 transition-colors duration-300 font-sans leading-normal;
+    }
+
+    .dark {
+        @apply bg-[var(--color-dark-background)] text-[var(--color-dark-text)];
+    }
+
+    .theme-yellow {
+        --color-primary: #facc15;
+        --color-secondary: #fbbf24;
+        @apply text-gray-900;
+    }
+
+    .theme-pink {
+        --color-primary: #fbcfe8;
+        --color-secondary: #f9a8d4;
+        @apply text-gray-900;
+    }
+
+    .theme-gray {
+        --color-primary: #d1d5db;
+        --color-secondary: #a1a1a6;
+        @apply text-gray-900;
+    }
+
+    .theme-blue {
+        --color-primary: #b4c6fc;
+        --color-secondary: #a5b4fc;
+        @apply text-gray-900;
+    }
+}
+
+@layer components {
+    .btn {
+        @apply py-2 px-4 font-semibold rounded-lg transition-transform transform text-base;
+    }
+
+    .btn-primary {
+        @apply shadow-md bg-[var(--color-primary)] hover:bg-[var(--color-secondary)] active:bg-[var(--color-primary)] focus:ring-2 focus:ring-[var(--color-primary)] focus:ring-opacity-50;
+        color: var(--color-text);
+    }
+
+    .btn-outline {
+        @apply focus:ring-opacity-50;
+        color: var(--color-text);
+    }
+
+    .btn-icon {
+        @apply shadow-md text-gray-500 bg-[var(--color-primary)] hover:bg-[var(--color-secondary)] inline-flex items-center justify-center space-x-4;
+    }
+
+    .btn-sm {
+        @apply shadow-md py-1 px-3 text-sm rounded-md;
+    }
+
+    .btn-lg {
+        @apply shadow-md py-3 px-6 text-lg rounded-xl;
+    }
+
+    .input {
+        @apply border rounded-lg p-3 text-gray-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500;
+    }
+
+    .input-dark {
+        @apply border-gray-600 bg-gray-800 text-gray-300;
+        border-color: var(--color-dark-gray-primary);
+        background-color: var(--color-dark-background);
+        color: var(--color-dark-text);
+    }
+    .palette-container {
+        @apply absolute top-16 right-24 p-4 rounded-lg shadow-lg flex flex-wrap gap-2 z-50;
+    }
+
+    .color-button {
+        @apply w-4 h-4 rounded-full border-2;
+    }
+}
