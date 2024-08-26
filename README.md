@@ -1,0 +1,2 @@
+# kronometre
+stopwatch for studying
